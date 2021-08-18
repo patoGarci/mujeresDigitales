@@ -95,7 +95,7 @@
         </div>
     </section>
     <section>
-        <input type="number" id="nombre">
+        <input type="number" id="nombre" value="100">
         <input type="number" id="apellido">
         <div onclick="multiplicar()" style="background-color: blue;width: 20px;text-align: center;color: white;">X</div>
         <div onclick="sumar()"style="background-color: blue;width: 20px;text-align: center;color: white">+</div>
@@ -103,6 +103,9 @@
         <div onclick="dividir()"style="background-color: blue;width: 20px;text-align: center;color: white">/</div>
         <div onclick="nombreCompleto()">nombre completo</div>
         <div onclick="obtenerDatos()">Obtener datos</div>
+        <input type="text"  id="agrega">
+        <div onclick="agregar()">agregar dato</div>
+        <div id="tablaMultiplicar"></div>
     </section>
     <footer>
         pie de pagina
@@ -146,6 +149,8 @@
         }
        for(var i=0; i <=20; i ++){
         console.log('5 '+'X '+ i + '= ' + (5 * i))
+        var tablaMultiplicar= document.getElementById("tablaMultiplicar")
+        tablaMultiplicar.innerHTML = tablaMultiplicar.innerHTML + '5 X '+ i + '= 5<br>'
        }
        var dato1 = 4
        var dato2= 5
@@ -159,6 +164,21 @@
        }else{
         console.log("no cumplida la condicion")
        }
+       var listaDatos = [0,1,"patricia",3,4,5,6,100]
+       console.log(listaDatos[2])
+       var agregar = function(){
+           var agrega= document.getElementById("agrega").value
+           listaDatos.push(agrega)
+        //    console.log(listaDatos)
+       }
+       var datos = []
+       datos.push("a")
+       datos.push("b")
+       datos.push("c")
+       for(var i =0;i < datos.length; i++){
+           tablaMultiplicar.innerHTML =tablaMultiplicar.innerHTML + datos[i]+" <br>"
+       }
+
     </script>
 </body>
 </html>
