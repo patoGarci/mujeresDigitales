@@ -9,6 +9,24 @@
 </head>
 
 <body>
+    <style>
+        .container-flex{
+            display: flex;
+            background: coral;
+            height: 400px;
+            flex-direction: row;
+            align-content: stretch;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: stretch;
+        }
+        .container-flex div{
+            width: 10px;
+            margin: 10px;
+            background-color: red;
+            line-height: 75px;
+        }
+    </style>
     <header>
         <h1>Titulo</h1>
     </header>
@@ -60,8 +78,78 @@
             <div class="btn">Enviar</div>
             <div class="btn">Borrar</div>
     </section>
+    <section>
+        <div class="container-flex">
+            <div >1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div >1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div >1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+    </section>
+    <section>
+        <input type="number" id="nombre">
+        <input type="number" id="apellido">
+        <div onclick="multiplicar()" style="background-color: blue;width: 20px;text-align: center;color: white;">X</div>
+        <div onclick="sumar()"style="background-color: blue;width: 20px;text-align: center;color: white">+</div>
+        <div onclick="restar()"style="background-color: blue;width: 20px;text-align: center;color: white">-</div>
+        <div onclick="dividir()"style="background-color: blue;width: 20px;text-align: center;color: white">/</div>
+        <div onclick="nombreCompleto()">nombre completo</div>
+        <div onclick="obtenerDatos()">Obtener datos</div>
+    </section>
     <footer>
         pie de pagina
     </footer>
+    <script>
+        var cadena = "el resultado es:"
+        var a = '5';
+        var b = 4;
+        var c = a * b
+        alert(cadena + c)
+        var valor = 1000;
+        var estado = true;
+        var estado2= false;
+        var cantidad = 1.5
+        valor1 = 2
+        valor2 = 4
+        
+        var multiplicar = function(){
+            console.log(valor1 * valor2)
+        }
+        var sumar = function(){
+            console.log(valor1 + valor2)
+        }
+        var restar = function(){
+            console.log(valor1 - valor2)
+        }
+        var dividir = function(){
+            console.log(valor1 / valor2)
+        }
+        var nombre = "patricia";
+        var apellido = "garcia";
+        var nombreCompleto =  function(){
+            console.log(nombre +" "+ apellido)
+        }
+        var obtenerDatos = function(){
+            var a = document.getElementById("nombre").value
+            console.log(a)
+            var b = document.getElementById("apellido").value
+            var num1 = parseInt(a)
+            var num2= parseInt(b)
+        }
+        // nombreCompleto()
+        // multiplicar()
+        // sumar()
+        // restar()
+        // dividir()
+        // obtenerDatos()
+    </script>
 </body>
 </html>
