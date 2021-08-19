@@ -73,4 +73,18 @@ for(key of miVariableArray.keys()){
     console.log(key)
     miVariableArray.splice(key,1)
 }
-console.log(miva)
+console.log(miVariableArray)
+
+let button = document.querySelector("button")
+let dataMascotas = []
+dataMascotas= JSON.parse(localStorage.getItem("dataMAscotas").toString())
+button.addEventListener("click",()=>{
+    let nombreMascota = document.getElementById("nombreMascota").value;
+    let edadMascota = document.getElementById("edadMascota").value;
+    let duenoMascota = document.getElementById("duenoMascota").value;
+    dataMascotas.push({nombre:nombreMascota, edad:edadMascota, duenoMascota})
+
+    let data  = JSON.stringify(dataMascotas);
+    localStorage.setItem("dataMAscotas",data)
+})
+
