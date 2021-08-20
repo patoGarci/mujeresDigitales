@@ -1,21 +1,91 @@
-Calculadora()
-function Calculadora(){
-    let muestraDigitados = "";
-    const numeros = document.querySelector("#numeros");
-    let btnCalculadora = document.querySelectorAll(".btnCalculadora");
-    btnCalculadora.forEach(element => {
-        element.addEventListener("click",()=>{
-            add(element.innerHTML);
-        })
-    });
-    let data = [];
-    function add(num){
-        muestraDigitados = muestraDigitados + num;
-        numeros.value = muestraDigitados;
-        data.push = muestraDigitados;
+var memory = "0", current = "0", operation = 0;
+const maxChar = 10;
+const display = document.querySelector('.display p');
+
+function addValue(dig){
+if ((eval(current) === 0) && (current.indexOf(".") === -1)) {
+        current = dig;
+        } else {
+            current += dig;
+        }
+     display.innerHTML = current;
+}
+
+function addDecimal() {
+  if (current.length === 0) {
+      current = "0.";
+  } else
+    if (current.indexOf(".") === -1){
+      current += ".";
     }
-    const btnIgual = document.querySelector(".btnIgual");
-    btnIgual.addEventListener("click",()=>{
-        console.log(data)
-    })
+
+  display.innerHTML = current;
+}
+
+function plusMinus() {
+    //+ y - el num
+   if(current.indexOf("-") === 0) {
+      current = current.substring(1);
+    } else {
+      current = "-" + current;
+    }
+    if (eval(current) === 0 && current.indexOf(".") === -1) {
+      current = "0";
+    }
+  display.innerHTML = current;
+}
+
+function allClear() {
+  current = "0";
+  Operation = 0;
+  memory = "0";
+ display.innerHTML = current;
+}
+
+function addOperation(op) {
+  if (operation !== 0) {
+    calculate();
+  }
+
+  if (op.indexOf("*") > -1) { operation = 1};
+  if (op.indexOf("/") > -1) { operation = 2};
+  if (op.indexOf("+") > -1) { operation = 3};
+  if (op.indexOf("-") > -1) { operation = 4};
+  memory = current;
+  current = "";
+  display.innerHTML = current;
+}
+
+function percent(){
+    if(eval(memory) === 0){
+        current = current / 100;
+    } else {
+       current = (current / 100) * memory;
+    }
+ display.innerHTML = current;
+}
+
+function calculate() {
+  if (operation === 1) {
+    current = eval(memory) * eval(current);
+  }
+  if (operation === 2) {
+  if (eval(current) !== 0) {
+      current = eval(memory) / eval(current);
+    } else {
+      current = "Error";
+    }
+  }
+
+  if (operation === 3) {
+    current = eval(memory) + eval(current);
+  }
+
+  if (operation === 4) {
+    current = eval(memory) - eval(current);
+  }
+  current = current + "";
+  operation = 0;
+  memory = "0";
+  display.innerHTML = current;
 }

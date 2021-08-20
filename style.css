@@ -83,21 +83,93 @@ button{
     background-color: aqua;
     width: 100px;
 }
-.calculadora{
-    display: flex;
-    width: 40%;
-    border: 1px black solid;
-    flex-direction: column;
-    margin: 0 auto;
+
+.calculator {
+    margin: auto;
+    margin-top: 100px;
+    width: 300px;
+    
+    
+    
 }
-#numeros{
-    width: 99%;
-    height: 50px;
-    background-color: blanchedalmond;
+
+/* ------------------------------ 
+------------- Display -----------
+-------------------------------- */
+
+
+.display {
+    
+    position: relative;
+    width: 294px;
+    height: 120px;
+    border: 3px solid #2f2f2f;
+    text-align: right;
+    background-color: #2f2f2f;
+    color: #fff;
 }
-.btnC{
-    width: 20%;
+
+.display p {
+    height: 60px;
+    background-color: #2f2f2f;
+    position: absolute;
+    bottom:0;
+    right:0;
+    font-size: 60px;
 }
-#button{
+/* calculadora */
+
+.buttons {
+  margin-top: 4px;
+}
+.digit:hover {
+    background-color: #dbdbdb;
+
+}
+.operator:hover {
+    background-color: #f79132;
+}
+
+button {
+    border: 1;
+    outline: none;
+    height: 75px;
+    width: 75px;
     text-align: center;
+    margin-top: -4px;
+    margin-right: -4px;
+    font-size: 25px;
+}
+
+#zero {
+    width: 150px;
+}
+
+.operator {
+    background-color: #f9800f;
+    color: #fff;
+}
+#AC:hover {
+     background-color: #e0dcdc
+}
+#AC {
+    background-color: #c3c3c3;
+
+}
+
+#plus_minus:hover {
+     background-color: #e0dcdc
+}
+#plus_minus {
+    background-color: #c3c3c3;
+}
+#percent:hover {
+     background-color: #e0dcdc
+}
+#percent {
+    background-color: #c3c3c3;
+}
+.operator {
+    height: 75px;
+    width: 75px;
 }
