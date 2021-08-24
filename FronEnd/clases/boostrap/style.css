@@ -1,0 +1,11 @@
+form{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+.btnForm{
+    background-color: blue !important;
+}
+.form{
+    margin-top: 70px;
+}
