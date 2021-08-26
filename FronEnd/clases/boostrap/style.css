@@ -5,6 +5,7 @@ form{
 }
 .btnForm{
     background-color: blue !important;
+    color: white !important;
 }
 .form{
     margin-top: 70px;
